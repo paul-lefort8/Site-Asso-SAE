@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adhésion – ANCGVM</title>
+    <link rel="stylesheet" href="/css/adhésion/adhesion.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ===== EN-TÊTE ===== -->
+    <header class="page-header">
+        <style>
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: 0.3s;
+            }
+
+            header {
+                background-color: #eeeeee;
+                position: static;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+                overflow: visible;
+            }
+
+            header ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            header ul li a {
+                display: block;
+                font-size: 16px;
+                padding: 20px 25px;
+                font-family: "Archivo Black", sans-serif;
+                color: #196ba3;
+                border-bottom: 5px solid transparent;
+                transition: 0.3s;
+            }
+
+            header ul li a:hover {
+                color: #196ba3;
+                border-bottom: 5px solid #196ba3;
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            .submenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #eeeeee;
+                width: 200px;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .dropdown:hover .submenu {
+                display: flex;
+                position: relative;
+            }
+
+            .submenu li a {
+                padding: 15px;
+                border-bottom: none;
+                width: 100%;
+            }
+
+            .submenu li a:hover {
+                position: absolute;
+                top: 100%;
+                left:0;
+                z-index: 2000;
+                background-color: #196ba3;
+                color: #ffffff;
+                border-bottom: none;
+            }
+        </style>
+        <div class="logo">
+            <img src="/image/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li class="dropdown">
+                    <a>PRÉSENTATION ⏷</a>
+                    <ul class="submenu">
+                        <li><a href="html/presentation/histoire.html">HISTOIRE</a></li>
+                        <li><a href="html/presentation/mission.html">MISSION</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a>ADHÉSION ⏷</a>
+                    <ul class="submenu">
+                        <li><a href="/html/adhésion/don.html">DON</a></li>
+                        <li><a href="/html/adhésion/formulaire.html">FORMULAIRE</a></li>
+                    </ul>
+                </li>
+                <li><a href="html/chancellerie.html">CHANCELLERIE</a></li>
+                <li><a href="html/contact.html">CONTACT</a></li>
+            </ul>
+            <h1 class="page-title">Adhésion</h1>
+    </header>
+
+    <main>
+
+        <!-- ===== SECTION 1 : REJOINDRE ===== -->
+        <section class="section">
+            <div class="section__inner">
+                <span class="section__label">Rejoindre</span>
+                <h2 class="section__title">Devenir membre</h2>
+                <div class="section__divider"></div>
+                <p class="section__text">
+                    L'ANCGVM rassemble les militaires des armées de Terre, de l'Air et de l'Espace,
+                    de la Marine et de la Gendarmerie nationale, ainsi que les personnes morales —
+                    unités militaires, villes et institutions civiles — cités à l'ordre de la Nation
+                    et décorés d'une croix de guerre ou de la croix de la Valeur militaire.
+                </p>
+                <p class="section__text">
+                    Rejoindre l'ANCGVM, c'est participer à la préservation de la mémoire et à la
+                    transmission des valeurs de courage aux nouvelles générations.
+                    L'association a son siège à l'Hôtel national des Invalides, Paris.
+                </p>
+                <a href="formulaire.html" class="btn btn--primary">Formulaire d'adhésion</a>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2 : DONS / LEGS ===== -->
+        <section class="section section--support">
+            <div class="section__inner">
+                <span class="section__label">Soutien</span>
+                <h2 class="section__title">Dons / Legs</h2>
+                <div class="section__divider"></div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card__title">Dons</h3>
+                        <p class="card__text">
+                            Soutenez les actions et missions de l'ANCGVM par un don ponctuel ou régulier.
+                            Chaque contribution aide à perpétuer la mémoire des décorés et à financer
+                            nos publications et manifestations commémoratives.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Donations et Legs</h3>
+                        <p class="card__text">
+                            Transmettez votre attachement aux valeurs militaires en inscrivant l'ANCGVM
+                            dans vos dispositions testamentaires. Un geste durable au service de la mémoire
+                            et des générations futures.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="don.html" class="btn btn--secondary">Faire un don</a>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3 : BOUTIQUE ===== -->
+        <section class="section section--shop">
+            <div class="section__inner">
+                <span class="section__label">Boutique</span>
+                <h2 class="section__title">Boutique &amp; Documentation</h2>
+                <div class="section__divider"></div>
+                <p class="section__text">
+                    Retrouvez les publications officielles et les articles de l'Association nationale
+                    des croix de guerre et de la valeur militaire sur
+                    <a href="https://www.croixdeguerre-valeurmilitaire.fr"
+                        style="color:var(--gold);">croixdeguerre-valeurmilitaire.fr</a>.
+                </p>
+
+                <ul class="shop-list">
+                    <li class="shop-item">
+                        <span class="shop-item__number">01</span>
+                        <div>
+                            <h4 class="shop-item__title">Revues publiées</h4>
+                            <p class="shop-item__desc">
+                                La revue trimestrielle <em>Croix de guerre &amp; Valeur militaire</em>,
+                                publication officielle de l'ANCGVM depuis sa création.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="shop-item">
+                        <span class="shop-item__number">02</span>
+                        <div>
+                            <h4 class="shop-item__title">Villes décorées</h4>
+                            <p class="shop-item__desc">
+                                Articles et documentation sur les communes françaises honorées
+                                de la Croix de Guerre pour leur résistance et leurs sacrifices.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="shop-item">
+                        <span class="shop-item__number">03</span>
+                        <div>
+                            <h4 class="shop-item__title">Unités décorées</h4>
+                            <p class="shop-item__desc">
+                                Documentation sur les unités militaires des armées de Terre,
+                                de l'Air et de l'Espace, de la Marine et de la Gendarmerie nationale décorées.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="shop-item">
+                        <span class="shop-item__number">04</span>
+                        <div>
+                            <h4 class="shop-item__title">Institutions civiles décorées</h4>
+                            <p class="shop-item__desc">
+                                Articles et documentation sur les institutions civiles honorées
+                                de la Croix de Guerre ou de la Valeur militaire.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== PIED DE PAGE ===== -->
+    <footer class="page-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="footer-col__title">ANCGVM</p>
+                <p>Hôtel national des Invalides</p>
+                <p>129, rue de Grenelle</p>
+                <p>75007 Paris</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Contact</p>
+                <a href="tel:+33144423847">01 44 42 38 47</a>
+                <a href="mailto:ancgvm@sfr.fr">ancgvm@sfr.fr</a>
+                <a href="https://www.croixdeguerre-valeurmilitaire.fr">croixdeguerre-valeurmilitaire.fr</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Liens</p>
+                <a href="formulaire.html">Formulaire d'adhésion</a>
+                <a href="don.html">Faire un don</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Association nationale des croix de guerre et de la valeur militaire © 2026</p>
+            <p>Lucas, Charles, Irénée, Paul, Arnaud</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

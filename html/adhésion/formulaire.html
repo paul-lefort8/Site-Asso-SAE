@@ -1,44 +1,353 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/adhésion/formulaire.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <title>ANCGVM</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire d'adhésion – ANCGVM</title>
+    <link rel="stylesheet" href="/css/adhésion/adhesion.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-    <header>
+
+    <!-- ===== EN-TÊTE ===== -->
+    <header class="page-header">
+        <style>
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: 0.3s;
+            }
+
+            header {
+                background-color: #eeeeee;
+                position: static;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+                overflow: visible;
+            }
+
+            header ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            header ul li a {
+                display: block;
+                font-size: 16px;
+                padding: 20px 25px;
+                font-family: "Archivo Black", sans-serif;
+                color: #196ba3;
+                border-bottom: 5px solid transparent;
+                transition: 0.3s;
+            }
+
+            header ul li a:hover {
+                color: #196ba3;
+                border-bottom: 5px solid #196ba3;
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            .submenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #eeeeee;
+                width: 200px;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .dropdown:hover .submenu {
+                display: flex;
+                position: relative;
+            }
+
+            .submenu li a {
+                padding: 15px;
+                border-bottom: none;
+                width: 100%;
+            }
+
+            .submenu li a:hover {
+                position: absolute;
+                top: 100%;
+                left:0;
+                z-index: 2000;
+                background-color: #196ba3;
+                color: #ffffff;
+                border-bottom: none;
+            }
+        </style>
         <div class="logo">
-            <img src="../../image/logo.png" alt="logo">
+            <img src="/image/logo.png" alt="logo">
         </div>
         <nav>
             <ul>
-                <li><a href="../../index.html">ACCUEIL</a></li>
+                <li><a href="index.html">ACCUEIL</a></li>
                 <li class="dropdown">
                     <a>PRÉSENTATION ⏷</a>
                     <ul class="submenu">
-                        <li><a href="../presentation/histoire.html">HISTOIRE</a></li>
-                        <li><a href="../presentation/mission.html">MISSION</a></li>
+                        <li><a href="html/presentation/histoire.html">HISTOIRE</a></li>
+                        <li><a href="html/presentation/mission.html">MISSION</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a>ADHÉSION ⏷</a>
                     <ul class="submenu">
-                        <li><a href="./modalité.html">MODALITÉS</a></li>
-                        <li><a href="./adhésion/modalité.html">FORMULAIRE</a></li>
+                        <li><a href="/html/adhésion/don.html">DON</a></li>
+                        <li><a href="/html/adhésion/formulaire.html">FORMULAIRE</a></li>
                     </ul>
                 </li>
-                <li><a href="../chancellerie.html">CHANCELLERIE</a></li>
-                <li><a href="../contact.html">CONTACT</a></li>
+                <li><a href="html/chancellerie.html">CHANCELLERIE</a></li>
+                <li><a href="html/contact.html">CONTACT</a></li>
             </ul>
-        </nav>
+            <h1 class="page-title">Formulaire d'adhésion</h1>
     </header>
-    <footer>
-        <p>Association nationale des croix de guerre et de la valeur militaire</p>
-        <p>Lucas, Charles, Irénée, Paul, Arnaud</p>
+
+    <!-- ===== FORMULAIRE ===== -->
+    <main>
+        <div class="form-wrapper">
+
+            <!-- Encart informatif -->
+            <div class="form-info">
+                <p>
+                    <strong>Qui peut adhérer ?</strong> Tout militaire des armées de Terre, de l'Air et de l'Espace,
+                    de la Marine et de la Gendarmerie nationale, titulaire d'une Croix de guerre (1914–1918,
+                    1939–1945, TOE), de la Croix de la Valeur militaire, de la Médaille de la Gendarmerie nationale
+                    ou de la Médaille d'or de la Défense nationale avec citation. Les personnes morales (unités,
+                    villes, institutions civiles) peuvent également adhérer.
+                </p>
+            </div>
+
+            <form action="#" method="post" novalidate>
+
+                <!-- ── SECTION 1 : IDENTITÉ ── -->
+                <p class="form-section-title">Identité</p>
+                <span class="form-section-label">Informations personnelles</span>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="civilite">Civilité <span class="required">*</span></label>
+                        <select id="civilite" name="civilite" required>
+                            <option value="">— Sélectionner —</option>
+                            <option value="M">M.</option>
+                            <option value="Mme">Mme</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="grade">Grade</label>
+                        <select id="grade" name="grade">
+                            <option value="">— Sélectionner —</option>
+                            <option value="soldat">Soldat / Matelot</option>
+                            <option value="caporal">Caporal / Quartier-maître</option>
+                            <option value="sergent">Sergent / Second-maître</option>
+                            <option value="adjudant">Adjudant / Major</option>
+                            <option value="aspirant">Aspirant / Enseigne de vaisseau 2e cl.</option>
+                            <option value="lt">Lieutenant / Enseigne de vaisseau 1re cl.</option>
+                            <option value="cne">Capitaine / Lieutenant de vaisseau</option>
+                            <option value="cdt">Commandant / Capitaine de corvette</option>
+                            <option value="ltcol">Lieutenant-colonel / Capitaine de frégate</option>
+                            <option value="col">Colonel / Capitaine de vaisseau</option>
+                            <option value="gen">Général / Amiral</option>
+                            <option value="civil">Civil / Personne morale</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="nom">Nom <span class="required">*</span></label>
+                        <input type="text" id="nom" name="nom" placeholder="Nom de famille" required />
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom <span class="required">*</span></label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required />
+                    </div>
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="date_naissance">Date de naissance</label>
+                        <input type="text" id="date_naissance" name="date_naissance" placeholder="JJ/MM/AAAA" />
+                    </div>
+                    <div>
+                        <label for="nationalite">Nationalité</label>
+                        <input type="text" id="nationalite" name="nationalite" placeholder="Française" />
+                    </div>
+                </div>
+
+                <hr class="form-separator" />
+
+                <!-- ── SECTION 2 : COORDONNÉES ── -->
+                <p class="form-section-title">Coordonnées</p>
+                <span class="form-section-label">Adresse et contact</span>
+
+                <div class="form-group">
+                    <label for="adresse">Adresse <span class="required">*</span></label>
+                    <input type="text" id="adresse" name="adresse" placeholder="Numéro et nom de la rue" required />
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="cp">Code postal <span class="required">*</span></label>
+                        <input type="text" id="cp" name="cp" placeholder="75007" required />
+                    </div>
+                    <div>
+                        <label for="ville">Ville <span class="required">*</span></label>
+                        <input type="text" id="ville" name="ville" placeholder="Paris" required />
+                    </div>
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="email">Adresse e-mail <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="exemple@email.fr" required />
+                    </div>
+                    <div>
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="01 44 42 38 47" />
+                    </div>
+                </div>
+
+                <hr class="form-separator" />
+
+                <!-- ── SECTION 3 : DÉCORATION ── -->
+                <p class="form-section-title">Décoration</p>
+                <span class="form-section-label">Titre donnant droit à l'adhésion</span>
+
+                <div class="form-group">
+                    <label for="decoration">Décoration obtenue <span class="required">*</span></label>
+                    <select id="decoration" name="decoration" required>
+                        <option value="">— Sélectionner votre décoration —</option>
+                        <option value="cg1418">Croix de guerre 1914–1918</option>
+                        <option value="cg3945">Croix de guerre 1939–1945</option>
+                        <option value="cgtoe">Croix de guerre des théâtres d'opérations extérieurs (TOE)</option>
+                        <option value="cvm">Croix de la Valeur militaire</option>
+                        <option value="mgn">Médaille de la Gendarmerie nationale avec citation</option>
+                        <option value="modn">Médaille d'or de la Défense nationale avec citation</option>
+                    </select>
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="date_decoration">Date d'attribution</label>
+                        <input type="text" id="date_decoration" name="date_decoration" placeholder="MM/AAAA" />
+                    </div>
+                    <div>
+                        <label for="armee">Armée d'appartenance</label>
+                        <select id="armee" name="armee">
+                            <option value="">— Sélectionner —</option>
+                            <option value="terre">Armée de Terre</option>
+                            <option value="air">Armée de l'Air et de l'Espace</option>
+                            <option value="marine">Marine nationale</option>
+                            <option value="gendarmerie">Gendarmerie nationale</option>
+                            <option value="civil">Civil / Institution</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="unite">Unité ou institution (si applicable)</label>
+                    <input type="text" id="unite" name="unite" placeholder="Nom de l'unité ou de l'institution" />
+                </div>
+
+                <hr class="form-separator" />
+
+                <!-- ── SECTION 4 : COTISATION ── -->
+                <p class="form-section-title">Cotisation</p>
+                <span class="form-section-label">Montant annuel de l'adhésion</span>
+
+                <div class="form-group">
+                    <label for="cotisation">Catégorie d'adhésion <span class="required">*</span></label>
+                    <select id="cotisation" name="cotisation" required>
+                        <option value="">— Sélectionner —</option>
+                        <option value="membre">Membre — cotisation annuelle</option>
+                        <option value="bienfaiteur">Membre bienfaiteur — cotisation majorée</option>
+                        <option value="personne_morale">Personne morale (unité, ville, institution)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="commentaire">Informations complémentaires</label>
+                    <textarea id="commentaire" name="commentaire"
+                        placeholder="Précisions éventuelles sur votre situation ou votre démarche…"></textarea>
+                </div>
+
+                <hr class="form-separator" />
+
+                <!-- ── SECTION 5 : CONSENTEMENTS ── -->
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd" required />
+                            J'accepte que mes données personnelles soient utilisées par l'ANCGVM dans le cadre
+                            de la gestion de mon adhésion, conformément à la loi Informatique et Libertés.
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" />
+                            Je souhaite recevoir la revue trimestrielle <em>Croix de guerre &amp; Valeur militaire</em>
+                            et les communications de l'association.
+                        </label>
+                    </div>
+                </div>
+
+                <p class="form-note">
+                    Les champs marqués d'un <span style="color:var(--gold);">*</span> sont obligatoires.
+                    Pour toute question, contactez-nous au <strong>01 44 42 38 47</strong>
+                    ou par e-mail à <strong>ancgvm@sfr.fr</strong>.
+                </p>
+
+                <!-- ── ACTIONS ── -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary">Envoyer ma demande d'adhésion</button>
+                    <a href="adhesion.html" class="btn btn--back">← Retour</a>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- ===== PIED DE PAGE ===== -->
+    <footer class="page-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="footer-col__title">ANCGVM</p>
+                <p>Hôtel national des Invalides</p>
+                <p>129, rue de Grenelle</p>
+                <p>75007 Paris</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Contact</p>
+                <a href="tel:+33144423847">01 44 42 38 47</a>
+                <a href="mailto:ancgvm@sfr.fr">ancgvm@sfr.fr</a>
+                <a href="https://www.croixdeguerre-valeurmilitaire.fr">croixdeguerre-valeurmilitaire.fr</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Liens</p>
+                <a href="adhesion.html">Page Adhésion</a>
+                <a href="don.html">Faire un don</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Association nationale des croix de guerre et de la valeur militaire © 2026</p>
+            <p>Lucas, Charles, Irénée, Paul, Arnaud</p>
+        </div>
     </footer>
+
 </body>
+
 </html>

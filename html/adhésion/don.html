@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faire un don – ANCGVM</title>
+    <link rel="stylesheet" href="/css/adhésion/adhesion.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ===== EN-TÊTE ===== -->
+    <header class="page-header">
+        <style>
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: 0.3s;
+            }
+
+            header {
+                background-color: #eeeeee;
+                position: static;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+                overflow: visible;
+            }
+
+            header ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            header ul li a {
+                display: block;
+                font-size: 16px;
+                padding: 20px 25px;
+                font-family: "Archivo Black", sans-serif;
+                color: #196ba3;
+                border-bottom: 5px solid transparent;
+                transition: 0.3s;
+            }
+
+            header ul li a:hover {
+                color: #196ba3;
+                border-bottom: 5px solid #196ba3;
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            .submenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #eeeeee;
+                width: 200px;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .dropdown:hover .submenu {
+                display: flex;
+                position: relative;
+            }
+
+            .submenu li a {
+                padding: 15px;
+                border-bottom: none;
+                width: 100%;
+            }
+
+            .submenu li a:hover {
+                position: absolute;
+                top: 100%;
+                left:0;
+                z-index: 2000;
+                background-color: #196ba3;
+                color: #ffffff;
+                border-bottom: none;
+            }
+        </style>
+        <div class="logo">
+            <img src="/image/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li class="dropdown">
+                    <a>PRÉSENTATION ⏷</a>
+                    <ul class="submenu">
+                        <li><a href="html/presentation/histoire.html">HISTOIRE</a></li>
+                        <li><a href="html/presentation/mission.html">MISSION</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a>ADHÉSION ⏷</a>
+                    <ul class="submenu">
+                        <li><a href="/html/adhésion/don.html">DON</a></li>
+                        <li><a href="/html/adhésion/formulaire.html">FORMULAIRE</a></li>
+                    </ul>
+                </li>
+                <li><a href="html/chancellerie.html">CHANCELLERIE</a></li>
+                <li><a href="html/contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <h1 class="page-title">Dons / Legs</h1>
+        <p class="page-subtitle">Soutenir la mémoire et les valeurs militaires françaises</p>
+    </header>
+
+    <main>
+        <div class="form-wrapper">
+            <!-- ── ONGLET DON ── -->
+            <p class="form-section-title">Faire un don</p>
+
+            <form action="#" method="post" novalidate>
+
+                <!-- Montants rapides -->
+                <div class="form-group">
+                    <label>Choisissez un montant</label>
+                    <div class="amount-buttons" id="amounts">
+                        <button type="button" class="amount-btn" data-val="20">20 €</button>
+                        <button type="button" class="amount-btn" data-val="50">50 €</button>
+                        <button type="button" class="amount-btn selected" data-val="100">100 €</button>
+                        <button type="button" class="amount-btn" data-val="200">200 €</button>
+                        <button type="button" class="amount-btn" data-val="500">500 €</button>
+                    </div>
+                </div>
+
+                <!-- Montant libre -->
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="montant_libre">Ou saisissez un montant libre (€)</label>
+                        <input type="number" id="montant_libre" name="montant" min="1" placeholder="Montant en euros"
+                            value="100" />
+                    </div>
+                    <div>
+                        <label for="frequence">Fréquence</label>
+                        <select id="frequence" name="frequence">
+                            <option value="ponctuel">Don ponctuel</option>
+                            <option value="mensuel">Don mensuel</option>
+                            <option value="annuel">Don annuel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="form-note" style="margin-bottom:2rem;">
+                    Pour un don de <strong>100 €</strong>, votre contribution réelle après déduction fiscale est de
+                    <strong>34 €</strong>.
+                </p>
+
+                <hr class="form-separator" />
+
+                <!-- Coordonnées du donateur -->
+                <p class="form-section-title">Vos coordonnées</p>
+                <span class="form-section-label">Nécessaires pour l'émission du reçu fiscal</span>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="civilite_don">Civilité <span class="required">*</span></label>
+                        <select id="civilite_don" name="civilite" required>
+                            <option value="">— Sélectionner —</option>
+                            <option value="M">M.</option>
+                            <option value="Mme">Mme</option>
+                            <option value="org">Organisation / Entreprise</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nom_don">Nom <span class="required">*</span></label>
+                        <input type="text" id="nom_don" name="nom" placeholder="Nom de famille ou raison sociale"
+                            required />
+                    </div>
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="prenom_don">Prénom</label>
+                        <input type="text" id="prenom_don" name="prenom" placeholder="Prénom" />
+                    </div>
+                    <div>
+                        <label for="email_don">Adresse e-mail <span class="required">*</span></label>
+                        <input type="email" id="email_don" name="email" placeholder="exemple@email.fr" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adresse_don">Adresse postale <span class="required">*</span></label>
+                    <input type="text" id="adresse_don" name="adresse" placeholder="Numéro et nom de la rue" required />
+                </div>
+
+                <div class="form-group form-group--half">
+                    <div>
+                        <label for="cp_don">Code postal <span class="required">*</span></label>
+                        <input type="text" id="cp_don" name="cp" placeholder="75007" required />
+                    </div>
+                    <div>
+                        <label for="ville_don">Ville <span class="required">*</span></label>
+                        <input type="text" id="ville_don" name="ville" placeholder="Paris" required />
+                    </div>
+                </div>
+
+                <hr class="form-separator" />
+
+                <!-- Message libre -->
+                <div class="form-group">
+                    <label for="message_don">Message (facultatif)</label>
+                    <textarea id="message_don" name="message"
+                        placeholder="Vous pouvez laisser un message de soutien ou préciser l'affectation souhaitée de votre don…"></textarea>
+                </div>
+
+                <!-- Consentement -->
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd_don" required />
+                            J'accepte que mes données personnelles soient utilisées par l'ANCGVM
+                            pour la gestion de mon don et l'émission d'un reçu fiscal.
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="news_don" />
+                            Je souhaite recevoir les actualités de l'ANCGVM et la revue
+                            <em>Croix de guerre &amp; Valeur militaire</em>.
+                        </label>
+                    </div>
+                </div>
+
+                <p class="form-note">
+                    Les champs marqués d'un <span style="color:var(--gold);">*</span> sont obligatoires.
+                    Votre reçu fiscal sera émis dans un délai de 15 jours.
+                </p>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--gold">Valider mon don</button>
+                    <a href="adhesion.html" class="btn btn--back">← Retour</a>
+                </div>
+
+            </form>
+
+            <hr class="form-separator" />
+
+            <!-- ── SECTION LEGS / DONATIONS ── -->
+            <p class="form-section-title">Donations et Legs</p>
+            <span class="form-section-label">Transmettre un héritage durable</span>
+
+            <div class="cards-grid" style="margin-bottom:1.5rem;">
+                <div class="card">
+                    <h3 class="card__title">Donation</h3>
+                    <p class="card__text">
+                        Vous pouvez faire une donation de votre vivant à l'ANCGVM, en pleine propriété
+                        ou en usufruit. La donation est exonérée de droits de mutation pour les
+                        associations reconnues d'utilité publique.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3 class="card__title">Legs testamentaire</h3>
+                    <p class="card__text">
+                        Inscrivez l'ANCGVM dans votre testament pour lui léguer tout ou partie de vos biens.
+                        Les legs au profit d'associations reconnues d'utilité publique sont exonérés de droits
+                        de succession.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== PIED DE PAGE ===== -->
+    <footer class="page-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="footer-col__title">ANCGVM</p>
+                <p>Hôtel national des Invalides</p>
+                <p>129, rue de Grenelle</p>
+                <p>75007 Paris</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Contact</p>
+                <a href="tel:+33144423847">01 44 42 38 47</a>
+                <a href="mailto:ancgvm@sfr.fr">ancgvm@sfr.fr</a>
+                <a href="https://www.croixdeguerre-valeurmilitaire.fr">croixdeguerre-valeurmilitaire.fr</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col__title">Liens</p>
+                <a href="adhesion.html">Page Adhésion</a>
+                <a href="formulaire.html">Formulaire d'adhésion</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Association nationale des croix de guerre et de la valeur militaire © 2026</p>
+            <p>Lucas, Charles, Irénée, Paul, Arnaud</p>
+        </div>
+    </footer>
+
+    <!-- Script : sélection du montant + sync champ libre -->
+    <script>
+        const btns = document.querySelectorAll('.amount-btn');
+        const input = document.getElementById('montant_libre');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                input.value = btn.dataset.val;
+            });
+        });
+
+        input.addEventListener('input', () => {
+            btns.forEach(b => b.classList.remove('selected'));
+        });
+    </script>
+
+</body>
+
+</html>
